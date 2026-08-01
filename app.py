@@ -74,21 +74,11 @@ elif db_uri==MYSQL:
 
 toolkit=SQLDatabaseToolkit(db=db,llm=llm)
 
-agent=create_sql_agent(
-  llm=llm,
-  toolkit=toolkit,
-  verbose=True,
-  agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-  system_message="""
-    You are a SQL expert.
-Rules:
-1. Immediately convert the user question into a SINGLE SQL SELECT query.
-2. Execute the query ONCE.
-3. DO NOT reason step-by-step in text.
-4. DO NOT re-check table schemas repeatedly.
-5. NEVER use INSERT, UPDATE, DELETE, DROP.
-6. Return the final answer in natural language.
-"""
+agent = create_sql_agent(
+    llm=llm,
+    toolkit=toolkit,
+    verbose=True,
+urn the final answer in natural language.
 )
 
 if 'messages' not in st.session_state or st.sidebar.button("clear chat history"):
