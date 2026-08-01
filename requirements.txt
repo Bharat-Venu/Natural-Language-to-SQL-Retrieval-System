@@ -36,5 +36,5 @@ pytube
 numexpr
 langchain_huggingface
 huggingface_hub
-langchain_experimeantal
+langchain-experimental
 lamini
